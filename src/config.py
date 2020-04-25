@@ -29,6 +29,7 @@
 
 PERSONS = (
         # Tag / 氏,名 / 歳 / 誕生日 / 性別 / 職業 / 呼称 / 紹介
+        ("taro", "Taro", "", 20,(1,1), "male", "man"),
         )
 
 AREAS = (
@@ -41,6 +42,7 @@ STAGES = (
 
 DAYS = (
         # Tag / 名前 / 月 / 日 / 年
+        ("current", "current", 1,1,2020),
         )
 
 TIMES = (
