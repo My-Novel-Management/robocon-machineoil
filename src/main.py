@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Main story.
 """
@@ -14,7 +15,7 @@ from config import PERSONS, AREAS, STAGES, DAYS, TIMES, ITEMS, WORDS, RUBIS, LAY
 ## assets
 from storybuilder.assets import basic, accessory
 ## local files
-from src.chapter.main import ch_tmp
+from src.chapter.main import ch_main
 
 ## define alias
 W = Writer
@@ -22,23 +23,9 @@ _ = Writer.getWho()
 
 ################################################################
 #
-# Sample step:
-# 1) Create the world
-#       世界を作成する。
-# 2) Create a new chapter
-#       章の作成。
-# 3) Create a episode
-#       エピソード作成。
-# 4) Create a new scene
-#       シーン作成。物語のベース。ここに様々なActionを追加する。
-# 5) Create a new stage
-#       舞台作成。シーンに必須要素
-# 6) Create a new day and time
-#       日時作成。シーンのサブ要素
-# 7) Add a scene plot
-#       シーンプロットの作成。概要のないシーンは原則使えない
-# 8) Add scene actions
-#       シーンアクションの追加。
+#   1.労働ロボット「ドルイド」たちによる殺人事件が発生していた
+#   2.作業場から人間たちの暮らす世界で働くために、殺人事件解決に協力する
+#   3.人間になろうとしたドルイドは、自分が殺していたことに気づき、自殺する。自殺により人間になって空を見上げた
 #
 ################################################################
 
@@ -47,27 +34,27 @@ _ = Writer.getWho()
 def create_world():
     """Create a world.
     """
-    w = World("title")
+    w = World("見上げた空は機械油で滲む")
     w.setCommonData()
     w.setAssets(basic.ASSET)
     w.setAssets(accessory.ASSET)
     w.buildDB(PERSONS,
             AREAS, STAGES, DAYS, TIMES, ITEMS, WORDS,
             RUBIS, LAYERS)
-    w.setBaseDate(2020)
+    w.setBaseDate(2098)
     w.setBaseArea("Tokyo")
     # set textures
     # w.entryBlock()
     # w.entryHistory()
     # w.entryLifeNote()
-    w.setOutline("__outline__")
+    w.setOutline("作業ロボット「ドルイド」たちによる謎の殺人事件が発生し、人間に憧れるドルイドは事件解決に協力する")
     return w
 
 
 def main(): # pragma: no cover
     w = create_world()
     return w.build(
-            ch_tmp(w),
+            ch_main(w),
             )
 
 

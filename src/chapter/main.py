@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Chapter: story 1
+"""Chapter: main story
 """
 ## path
 import os
@@ -10,29 +10,19 @@ sys.path.append('storybuilder')
 from storybuilder.builder.world import World
 from storybuilder.builder.writer import Writer
 ## local files
+from src.chapter.e1_murdercase import ep_murdercase
+from src.chapter.e2_investigate import ep_investigation
+from src.chapter.e3_truecriminal import ep_true_criminal
 
 
 ## define alias
 W = Writer
 _ = W.getWho()
 
-## scenes
-def sc_tmp(w: World):
-    return w.scene("Sc: xxx",
-            camera=w.taro,
-            area=w.Tokyo,
-            stage=w.on_street,
-            day=w.in_current, time=w.at_afternoon,
-            )
-
-## episode
-def ep_tmp(w: World):
-    return w.episode("Ep: xxx",
-            sc_tmp(w),
-            )
-
 ## chapter
-def ch_tmp(w: World):
-    return w.chapter("Ch: xxx",
-            ep_tmp(w),
-            )
+def ch_main(w: World):
+    return w.chapter("main",
+            ep_murdercase(w),
+            ep_investigation(w),
+            ep_true_criminal(w),
+            note="労働ロボット「ドルイド」たちによる殺人事件が発生する。主人公のドルイドは事件解決に協力し、特典である人間が暮らす世界での労働を手に入れる為に調査を始める")
