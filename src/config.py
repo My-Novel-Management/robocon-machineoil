@@ -40,21 +40,35 @@ PERSONS = (
 AREAS = (
         # Tag / 名前 / x,y / 備考
         ("TK98", "ＴＫ０９８", 1000,1000),
+        ("InCias", "ザイアス工業施設内", 1100,1050,),
         ("MN20", "ＭＮ２０００", 10000,10000),
         )
 
 STAGES = (
         # Tag / 名前 / Area / 紹介
-        ("trashcollection", "廃品回収センター", "TK98"),
         ("moonbase", "月面基地", "MN20"),
         ("tengoku", "エルドラド", "MN20", "人間の暮らす世界"),
         ("cias", "ザイアス工業", "TK98"),
+        ("trashcollection", "廃品回収センター", "TK98"),
+        ### in facitily
+        ("pathway", "施設通路", "InCias"),
+        ("bedroom", "宿泊用個室（エミリア）", "InCias"),
+        ("nielroom", "ニールの部屋", "InCias"),
+        ("paulroom", "ポールの部屋", "InCias"),
+        ("dismantlinghall", "解体ホール", "InCias"),
+        ### Hotel
+        ("herroom", "エミリアの部屋（ホテル）", "TK98"),
+        ## Company
+        ("RobertCom", "ロバート通信", "TK98"),
         )
 
 DAYS = (
         # Tag / 名前 / 月 / 日 / 年
         ("current", "current", 1,1,2020),
+        ("visit", "訪問日", 5,10, 2098),
         ("murder1", "第一の殺人事件発生", 5,10, 2098),
+        ("murder2", "第二の殺人事件", 5,11, 2098),
+        ("reporting", "レポート作成日", 5,29, 2098),
         )
 
 TIMES = (
